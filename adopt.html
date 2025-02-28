@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互动养鸡小程序增强版</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f8ff;
+        }
+        .chicken-farm {
+            margin-bottom: 20px;
+        }
+        .chicken-image {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .chicken-image:hover {
+            transform: scale(1.1);
+        }
+        .chicken-count, .food-count {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .chicken-button, .feed-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 5px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+        }
+        .chicken-button:hover, .feed-button:hover {
+            background-color: #ffbb00;
+        }
+        .food-option {
+            margin: 10px 0;
+        }
+        .buy-food-button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .buy-food-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>我的养鸡场</h1>
+<div class="chicken-farm">
+    <img src="image/chicken.jpg" alt="鸡" class="chicken-image" onclick="addChickenByClickingImage()">
+</div>
+<div class="chicken-count" id="chickenCount">鸡的数量: 0</div>
+<button class="chicken-button" onclick="addChicken()">养鸡</button>
+
+<div class="food-section">
+    <div class="food-count" id="foodCount">食物数量: 0</div>
+    <div class="money-count" id="moneyCount">钱包: ¥100</div>
+
+    <div class="food-option">
+        <span>普通饲料 - ¥1/份</span>
+        <button class="buy-food-button" onclick="buyFood(1, 1)">购买</button>
+    </div>
+    <div class="food-option">
+        <span>高级饲料 - ¥3/份</span>
+        <button class="buy-food-button" onclick="buyFood(3, 3)">购买</button>
+    </div>
+    <div class="food-option">
+        <span>超级饲料 - ¥5/份</span>
+        <button class="buy-food-button" onclick="buyFood(5, 5)">购买</button>
+    </div>
+
+    <button class="feed-button" onclick="feedChickens()">喂食</button>
+</div>
+
+<audio id="background-music" src="image/music.mp3" loop>
+    您的浏览器不支持HTML5音频。
+</audio>
+
+<!-- 控制按钮 -->
+<button onclick="playMusic()">播放音乐</button>
+<button onclick="pauseMusic()">暂停音乐</button>
+<button onclick="stopMusic()">停止音乐</button>
+
+<script>
+    const music = document.getElementById('background-music');
+
+    function playMusic() {
+        music.play();
+    }
+
+    function pauseMusic() {
+        music.pause();
+    }
+
+    function stopMusic() {
+        music.pause();
+        music.currentTime = 0; // 重置音频播放位置
+    }
+</script>
+
+<script>
+    let chickenCount = 0;
+    let foodCount = 0;
+    let money = 100;
+
+    function updateChickenCount() {
+        document.getElementById('chickenCount').innerText = `鸡的数量: ${chickenCount}`;
+    }
+
+    function updateFoodCount() {
+        document.getElementById('foodCount').innerText = `食物数量: ${foodCount}`;
+    }
+
+    function updateMoneyCount() {
+        document.getElementById('moneyCount').innerText = `钱包: ¥${money}`;
+    }
+
+    function addChicken() {
+        if (foodCount > 0) {
+            chickenCount++;
+            foodCount--;
+            updateChickenCount();
+            updateFoodCount();
+        } else {
+            alert("没有食物了！先去买点食物吧！");
+        }
+    }
+
+    function addChickenByClickingImage() {
+        addChicken();
+    }
+
+    function feedChickens() {
+        // 假设喂食普通饲料可以让鸡的数量增加，每次喂食消耗1份食物
+        if (foodCount > 0) {
+            chickenCount += 2; // 喂食效果可以根据食物类型调整
+            foodCount--;
+            updateChickenCount();
+            updateFoodCount();
+        } else {
+            alert("没有食物可以喂食了！");
+        }
+    }
+
+    function buyFood(price, amount) {
+        if (money >= price) {
+            money -= price;
+            foodCount += amount;
+            updateMoneyCount();
+            updateFoodCount();
+        } else {
+            alert("钱包余额不足！");
+        }
+    }
+
+    // 初始化鸡、食物和钱包的数量
+    updateChickenCount();
+    updateFoodCount();
+    updateMoneyCount();
+</script>
+</body>
+</html>

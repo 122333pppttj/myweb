@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸡联网合作页面</title>
+    <!-- 在这里添加CSS链接，比如 <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* 在这里添加一些基本的样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #4cae4c;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>鸡联网合作邀请</h1>
+    <div class="content">
+        <p>欢迎来到鸡联网合作页面！我们致力于提供最优质的鸡肉产品和服务，现在诚邀您加入我们的合作伙伴行列。</p>
+        <p>作为我们的合作伙伴，您将享受到以下优势：</p>
+        <ul>
+            <li>优惠的批发价格</li>
+            <li>定期的产品更新和促销信息</li>
+            <li>专业的客户支持和售后服务</li>
+            <li>以及更多...</li>
+        </ul>
+        <p>请填写以下表单以表达您的合作意向，我们将尽快与您联系。</p>
+    </div>
+    <form action="submit.html" method="post">
+        <div class="form-group">
+            <label for="company-name">公司名称：</label>
+            <input type="text" id="company-name" name="company-name" required>
+            <div class="error" id="company-name-error">公司名称不能为空</div>
+        </div>
+        <div class="form-group">
+            <label for="contact-name">联系人姓名：</label>
+            <input type="text" id="contact-name" name="contact-name" required>
+        </div>
+        <div class="form-group">
+            <label for="contact-email">联系邮箱：</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+        </div>
+        <div class="form-group">
+            <label for="contact-phone">联系电话：</label>
+            <input type="tel" id="contact-phone" name="contact-phone" required>
+        </div>
+        <div class="form-group">
+            <label for="cooperation-details">合作详情或需求：</label>
+            <input type="text" id="cooperation-details" name="cooperation-details" required>
+        </div>
+        <button type="submit" class="submit-btn">提交合作意向</button>
+    </form>
+</div>
+<script>
+    document.getElementById('cooperationForm').addEventListener('submit', function(event) {
+        var isValid = true;
+
+        // 验证公司名称
+        var companyName = document.getElementById('company-name').value;
+        if (companyName.trim() === '') {
+            document.getElementById('company-name-error').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('company-name-error').style.display = 'none';
+        }
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+
+
+    document.querySelectorAll('input').forEach(function(input) {
+        input.addEventListener('input', function() {
+            var errorElement = document.querySelector('#' + input.id + '-error');
+            if (errorElement) {
+                errorElement.style.display = 'none'; // 当用户开始输入时，隐藏错误消息
+            }
+        });
+    });
+</script>
+</body>
+</html>

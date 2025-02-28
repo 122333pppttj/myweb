@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>鸡爪网</title>
+    <style>
+    body{
+    margin:0;
+    height:100vh;
+    background-color:#eee;
+    }
+
+    .flex{
+    display:flex;
+    }
+    .flex1{
+    flex:1;
+    }
+    .column{
+    flex-direction:column;
+    }
+    .touBu{
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+            rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+          margin: 8px;
+          height:80px;
+          z-index:2;
+          background-color:#eee;
+          display:flex;
+    }
+    .ceBianLan{
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+            rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+          margin: 8px;
+          background-color:#fff;
+          flex:1;
+          z-index:3;
+          display:flex;
+    }
+    .xiangMu{
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+            rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+          margin: 8px;
+          background-color:#fff;
+          flex:3;
+          height:500px;
+          display:flex;
+          flex:3;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    }
+    .jiaoYeQu{
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+            rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+          margin: 8px;
+          height:150px;
+          justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+          display:flex;
+          background-color:#fff;
+          background:url(image/jiaoYeQu.jpg);
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+
+        }
+        .kongBaiKuang{
+        display:flex;
+        height:200px;
+        background-color:#eee;
+        background:url(image/kongBaiKuang.jpg);
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+        }
+        .wenBen{
+    background:url(jieshao.jpg);
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    text-align:center;
+        }
+        .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 30px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+
+        .touXiangFanZhuan {
+            transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            filter: FlipH;
+            -ms-filter: "FlipH";
+
+    </style>
+</head>
+<body style="flex">
+<!--主盒子，包含脚页，头部栏，主要内容区，按竖直方向分布，占满整个页面-->
+<div class="flex flex1 column">
+    <div class="kongBaiKuang">
+        <p style="font-size: large;">（version 2）
+            </p>
+    </div>
+    <!--头部栏，有4个按钮,按钮按横向分布，作导航按钮-->
+    <div class="touBu" style="vertical-align:middle">
+        <div style="flex:1;margin-left:35px" class="flex"><a href=" xianMu.html
+" class="button">项目介绍</a> </div>
+        <div style="flex:1;margin-left:35px" class="flex"><a href="caiGou.html" class="button">采购</a> </div>
+        <div style="flex:1;margin-left:35px" class="flex"><a href=" 404.html" class="button">出售</a> </div>
+        <div style="flex:1;margin-left:35px" class="flex"><a href="heZuo.html" class="button">合作</a> </div>
+        <div style="flex:1;margin-left:35px" class="flex"><a href="adopt.html" class="button">我来养</a> </div>
+    </div>
+    <!--头部栏下用一个大盒子包装主要内容区,横向分布-->
+    <div class="flex flex1">
+        <!--主要内容区分为侧边栏，项目介绍区-->
+
+        <!--侧边栏介绍公司-->
+        <div class="ceBianLan column">
+            <div style="height:200px" class="flex">
+            <p style="margin:10px;border:10px;padding:10px">
+
+               <a href="show.html"> <img src="image/touxiang.jpg" alt="maker1" width="40px" height="40px"></a>
+               <a href="show1.html"> <img src="image/name1.jpg" alt="maker2" width="40px" height="40px"></a>
+                <img src="image/name2.jpg" alt="maker3" width="40px" height="40px">
+                <img src="image/name3.jpg" alt="maker4" width="40px" height="40px">
+                <img src="image/name4.jpg" alt="maker5" width="40px" height="40px">
+                <img src="image/name5.jpg" alt="maker6" width="40px" height="40px">
+                <br/>
+                <a href="#">发送邮件</a>
+            </p>
+
+
+            </div>
+            <div style="height:300px;" class="flex flex1 wenBen">
+                <p style="margin:10px">“鸡联网”是一个基于物联网技术的养鸡业智能化项目。
+                    它通过部署传感器实时监测养鸡场环境及鸡只健康状况，
+                    利用云计算和大数据分析进行数据处理和预警，
+                    实现养殖过程的智能化管理。同时，建立全程追溯体系保障食品安全，
+                    并搭建综合服务平台提供全方位服务。
+                    该项目旨在提升养殖效率、保障食品安全、促进产业升级，具有广阔的应用前景。</p>
+            </div>
+        </div>
+        <!--项目介绍区，column分布-->
+        <div class="xiangMu column">
+          <div style="overflow:auto">
+
+            <div style="height:350px" class="flex">
+                <div style="margin:30px">
+            <img src="image/n1.jpg" alt="baiqieji" width="300px" height="250px">
+                    </div>
+                <div style="margin:30px">
+                    <h4>白切鸡</h4>
+                <p style="width:400px">白斩鸡又叫白切鸡、三黄油鸡，是一道中华民族特色菜肴，起源于广东，是一道经典的粤菜，在南方菜系中普遍存在，如广府菜、上海菜、客家菜（广东、福建、江西、广西）中都有，始于清代的民间酒店，因烹鸡时不加调味白煮而成，食用时随吃随斩，故称“白斩鸡”。
+
+                    白斩鸡形状美观，皮黄肉白，肥嫩鲜美，滋味异常鲜美，十分可口，肉色洁白皮带黄油，具有葱油香味，葱段打花镶边，食时佐以姜蓉、蒜泥、酱油，保持了鸡肉的鲜美、原汁原味，食之别有风味。
+                </p>
+               </div>
+            </div>
+            <div style="height:350px" class="flex">
+                <div style="margin:30px">
+                    <img src="image/n2.jpg" alt="sanBeiJi" width="300px" height="250px">
+                </div>
+                <div style="margin:30px">
+                    <h4>三杯鸡</h4>
+                    <p style="width:400px">
+                        中国江西省赣州市菜品
+                        三杯鸡是中国江西省赣州市传统风味名菜，属于赣菜客家美食。也是台湾有名的家常菜，因其烹饪时使用一杯米酒、一杯酱油和一杯黑麻油而得名。
+                        三杯鸡以鸡肉为主料，搭配糯米酒、青椒、红椒等辅料，通过炸鸡肉、炒糖色后进行煮焖，最后浇汁制作而成。
+                        2018年9月10日，三杯鸡被评为“江西十大经典名菜”。
+                    </p>
+                </div>
+            </div>
+
+            <div style="height:350px" class="flex">
+                <div style="margin:30px">
+                    <img src="image/n3.jpg" alt="xiangGuDunJi" width="300px" height="250px">
+                </div>
+                <div style="margin:30px">
+                    <h4>香菇炖鸡</h4>
+                    <p style="width:400px">
+                        香菇炖鸡是江苏省特色传统名菜，属于苏菜中比较有特色的菜肴，制作原料有鸡、香菇、笋等。受到各地人民欢迎，与其他吃食相比，鸡肉总是特别入味。
+                    </p>
+                </div>
+            </div>
+
+            <div style="height:350px" class="flex">
+                <div style="margin:30px">
+                    <img src="image/n4.jpg" alt="zhaJi" width="300px" height="250px">
+                </div>
+                <div style="margin:30px">
+                    <p style="width:400px">
+                        炸鸡是一系列用油炸制鸡肉菜肴的总称。世界上流行的炸鸡包括美式炸鸡、韩国炸鸡、泰式炸鸡、日式炸鸡、广式炸鸡、港式炸鸡等。
+                    </p>
+                </div>
+            </div>
+
+            <div style="height:350px" class="flex">
+                <div style="margin:30px">
+                    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=779286248&bvid=BV1k14y1c7VR&cid=1005548252&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                </div>
+
+                <div style="margin:30px">
+                    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113118130798968&bvid=BV1QQ4zeREcf&cid=25823678175&p=1" ></iframe>
+                </div>
+
+            </div>
+              
+          </div>
+        </div>
+    </div>
+
+    <!--脚页区,写说明-->
+    <div class="jiaoYeQu" >
+        <p>&copy;2024&nbsp;&nbsp;
+            电话：123456&nbsp;&nbsp;
+            主办单位：第七组 copyright</p>
+        <div style="margin-right:0%">
+            <ul><li><a href="#">免责声明</a> </li></ul>
+            <ul><li><a href="#">联系我们</a> </li></ul>
+            <ul><li><a href="#">意见反馈</a> </li></ul>
+            <ul><li><a href="#">关于我们</a> </li></ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
